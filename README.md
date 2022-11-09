@@ -2,9 +2,9 @@
 
 Bienvenidos al repositorio del curso de ReactJs, aca van a encontrar cada una de las clases divididas en diferentes ramas, por ejemplo:
 
-- clase-01-nivelacion
-- clase-02-instalacion
-- clase-03-jsx-transpiling
+- 01-nivelacion
+- 02-instalacion
+- 03-jsx-transpiling
 etc ...
 
 Esto es con la finalidad de que podamos ir construyendo nuestro proyecto final juntos y ustedes tengan una trazabilidad de como se van conectando cada uno de los puntos, herramientas, funciones o metodos que vamos viendo a lo largo del curso.
