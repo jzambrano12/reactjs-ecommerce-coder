@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+div, header, section, footer, input, textarea {
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: lightcoral;
+    width: 100%;
+    height: 60px;
+}
+
+section {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.05);
+}
+
+section > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 70%;
+    background-color: lightsalmon;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+input, textarea {
+    width: 100%;
+    border: none;
+    background-color: bisque;
+    padding: 1rem 2rem;
+    border: 1px solid lightcoral;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    background-color: grey;
+    border: none;
+    padding: 0.5rem 2rem;
+    color: white;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: lightcoral;
+}
+
+div.information {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+div.information > h1 {
+    font-size: 2rem;
+}
+
+#contact-form {
+    width: 100%
+}
