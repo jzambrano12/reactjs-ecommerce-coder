@@ -9,8 +9,8 @@ etc ...
 
 Esto es con la finalidad de que podamos ir construyendo nuestro proyecto final juntos y ustedes tengan una trazabilidad de como se van conectando cada uno de los puntos, herramientas, funciones o metodos que vamos viendo a lo largo del curso.
 
-En estos momentos estas en la rama *main* pero recuerda que si quieres ver el contenido de otras clases solo debes cambiar de rama en la parte superior.
+En estos momentos estas en la rama **main** pero recuerda que si quieres ver el contenido de otras clases solo debes cambiar de rama en la parte superior.
 
 Espero disfrutes el curso y pueda ayudarte un monton para iniciarte en el mundo del desarrollo Frontend con ReactJs
 
-Att: Jorge Zambrano
+Att: (Jorge Zambrano)[https://www.linkedin.com/in/jzambrano12/]
