@@ -13,4 +13,4 @@ En estos momentos estas en la rama **main** pero recuerda que si quieres ver el 
 
 Espero disfrutes el curso y pueda ayudarte un monton para iniciarte en el mundo del desarrollo Frontend con ReactJs
 
-Att: (Jorge Zambrano)[https://www.linkedin.com/in/jzambrano12/]
+Att: [Jorge Zambrano](https://www.linkedin.com/in/jzambrano12/)
