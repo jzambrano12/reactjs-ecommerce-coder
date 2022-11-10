@@ -52,7 +52,7 @@ const NavbarComponent = () => {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="/"
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
@@ -60,21 +60,21 @@ const NavbarComponent = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Team
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Projects
                 </a>
 
                 <a
-                  href="#"
+                  href="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Calendar
@@ -89,7 +89,7 @@ const NavbarComponent = () => {
       <div className="sm:hidden" id="mobile-menu">
         <div className="space-y-1 px-2 pt-2 pb-3">
           <a
-            href="#"
+            href="/"
             className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
             aria-current="page"
           >
@@ -97,21 +97,21 @@ const NavbarComponent = () => {
           </a>
 
           <a
-            href="#"
+            href="/"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Team
           </a>
 
           <a
-            href="#"
+            href="/"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Projects
           </a>
 
           <a
-            href="#"
+            href="/"
             className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Calendar
