@@ -3,20 +3,24 @@ import { useState } from "react";
 // Own components
 import ItemList from "./ItemList";
 
+// Images
+import Keyboard from "../assets/images/keyboard.jpg";
+import Mouse from "../assets/images/mouse.jpg";
+
 const productos = [
   {
     id: "1",
     name: "Keyboard",
     description: "Keyboard description",
     stock: 5,
-    img: "https://m.media-amazon.com/images/I/61vjNMgYGLL._AC_SX679_.jpg",
+    img: Keyboard,
   },
   {
     id: "2",
     name: "Mouse",
     description: "Mouse description",
     stock: 2,
-    img: "https://m.media-amazon.com/images/I/51pMqozCpML._AC_SX679_.jpg",
+    img: Mouse,
   },
 ];
 
@@ -30,6 +34,10 @@ const ItemListContainer = () => {
   );
 
   productList.then((data) => setProducts(data));
+
+  if (products.length === 0) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="h-full">
