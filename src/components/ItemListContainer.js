@@ -20,7 +20,7 @@ const productos = [
   },
 ];
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   const productList = new Promise((resolve) =>
