@@ -1,39 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 // Own components
 import ItemList from "./ItemList";
 
-// Images
-import Keyboard from "../assets/images/keyboard.jpg";
-import Mouse from "../assets/images/mouse.jpg";
-
-const productos = [
-  {
-    id: "1",
-    name: "Keyboard",
-    description: "Keyboard description",
-    stock: 5,
-    img: Keyboard,
-  },
-  {
-    id: "2",
-    name: "Mouse",
-    description: "Mouse description",
-    stock: 2,
-    img: Mouse,
-  },
-];
+// Mock
+import { item } from "../mocks/item.mock";
 
 const ItemListContainer = () => {
+  const { category } = useParams();
   const [products, setProducts] = useState([]);
 
-  const productList = new Promise((resolve) =>
-    setTimeout(() => {
-      resolve(productos);
-    }, 3000)
-  );
-
-  productList.then((data) => setProducts(data));
+  useEffect(() => {
+    new Promise((resolve) =>
+      setTimeout(() => {
+        resolve(item);
+      }, 2000)
+    ).then((data) => {
+      if (category) {
+        const categories = data.filter(
+          (product) => product.category === category
+        );
+        setProducts(categories);
+      } else {
+        setProducts(data);
+      }
+    });
+  }, [category]);
 
   if (products.length === 0) {
     return <p>Loading...</p>;

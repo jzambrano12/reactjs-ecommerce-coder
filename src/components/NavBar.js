@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavbarComponent = () => {
@@ -51,15 +52,29 @@ const NavbarComponent = () => {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
-                  Dashboard
-                </a>
+                  Home
+                </Link>
+                <Link
+                  to="/category/keyboard"
+                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  aria-current="page"
+                >
+                  Keyboards
+                </Link>
+                <Link
+                  to="/category/mouse"
+                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  aria-current="page"
+                >
+                  Mouses
+                </Link>
 
-                <a
+                {/* <a
                   href="/"
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
@@ -78,7 +93,7 @@ const NavbarComponent = () => {
                   className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Calendar
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

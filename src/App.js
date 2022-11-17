@@ -1,15 +1,12 @@
 import "./App.css";
-import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
-import NavbarComponent from "./components/NavBar";
+import { Layout } from "./components/Layout";
 
 function App() {
   return (
-    <main className="flex flex-col h-screen bg-slate-200">
-      <NavbarComponent />
+    <Layout>
       <ItemListContainer />
-      <ItemDetailContainer />
-    </main>
+    </Layout>
   );
 }
 
