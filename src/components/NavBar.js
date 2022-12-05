@@ -57,21 +57,21 @@ const NavbarComponent = () => {
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
-                  Home
+                  Inicio
                 </Link>
                 <Link
                   to="/category/keyboard"
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
-                  Keyboards
+                  Teclados
                 </Link>
                 <Link
                   to="/category/mouse"
                   className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                   aria-current="page"
                 >
-                  Mouses
+                  Ratones
                 </Link>
               </div>
             </div>

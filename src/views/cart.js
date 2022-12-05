@@ -11,7 +11,7 @@ const CartView = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const { productsAdded, clear } = useContext(CartContext);
+  const { productsAdded, clear, totalAmount } = useContext(CartContext);
 
   const handleFinalizePurchase = () => {
     setIsLoading(true);
@@ -30,6 +30,12 @@ const CartView = () => {
           <div className="flex flex-col items-center justify-center">
             <img src={EmptyCart} alt="Empty Cart" className="w-44 h-44" />
             <h1 className="text-2xl">No has agregado productos</h1>
+            <button
+              onClick={() => navigate("/")}
+              className="rounded-lg p-2 bg-gray-800 text-white mt-4"
+            >
+              Ir al Inicio
+            </button>
           </div>
         ) : (
           <div>
@@ -52,12 +58,15 @@ const CartView = () => {
               {isLoading ? (
                 <Loading size="50px" />
               ) : (
-                <button
-                  onClick={handleFinalizePurchase}
-                  className="rounded-lg p-2 bg-gray-800 text-white"
-                >
-                  Finalizar Compra
-                </button>
+                <div className="flex flex-col">
+                  <span>Total a pagar: ${totalAmount}</span>
+                  <button
+                    onClick={handleFinalizePurchase}
+                    className="rounded-lg p-2 bg-gray-800 text-white"
+                  >
+                    Finalizar Compra
+                  </button>
+                </div>
               )}
             </div>
           </div>

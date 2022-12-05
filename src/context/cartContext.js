@@ -1,8 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext([]);
 export const CartContextProvider = ({ children }) => {
   const [productsAdded, setProductsAdded] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  useEffect(() => {
+    const amount = productsAdded
+      .map((product) => parseInt(product.item.price) * product.quantityAdded)
+      .reduce((partialSum, a) => partialSum + a, 0);
+    setTotalAmount(amount);
+  }, [productsAdded]);
 
   function addItem(item, quantity) {
     const isAlreadyAdded = isInCart(item.id);
@@ -32,6 +40,7 @@ export const CartContextProvider = ({ children }) => {
 
   function clear() {
     setProductsAdded([]);
+    setTotalAmount(0);
   }
 
   function isInCart(itemId) {
@@ -40,7 +49,14 @@ export const CartContextProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ addItem, removeItem, clear, isInCart, productsAdded }}
+      value={{
+        addItem,
+        removeItem,
+        clear,
+        isInCart,
+        productsAdded,
+        totalAmount,
+      }}
     >
       {children}
     </CartContext.Provider>
