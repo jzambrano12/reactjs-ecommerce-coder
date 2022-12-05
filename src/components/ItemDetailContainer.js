@@ -12,7 +12,10 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     new Promise((resolve) =>
       // Simulation of a call to an api
-      setTimeout(() => resolve(Items.find((item) => item.id === id)), 1000)
+      setTimeout(() => {
+        const itemFiltered = Items.find((item) => item.id === id);
+        resolve(itemFiltered);
+      }, 1000)
     ).then((data) => setItem(data));
   }, [id]);
 

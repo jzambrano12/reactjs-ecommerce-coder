@@ -20,12 +20,15 @@ export const ItemListContainer = () => {
       // Simulation of a call to an api
       return setTimeout(() => {
         resolve(Items);
-      }, 1000);
+      }, 3000);
     }).then((data) => {
+      // Execute only in the categories views
       if (category) {
         const categories = data.filter(
           (product) => product.category === category
         );
+
+        // Execute only in the home
         setProducts(categories);
       } else {
         setProducts(data);

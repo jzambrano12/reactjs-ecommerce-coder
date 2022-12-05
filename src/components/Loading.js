@@ -1,10 +1,10 @@
-export const Loading = () => {
+export const Loading = ({ size = "100px" }) => {
   return (
     <div className="flex justify-center flex-1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="100px"
-        height="100px"
+        width={size}
+        height={size}
         viewBox="0 0 100 100"
         preserveAspectRatio="xMidYMid"
       >
