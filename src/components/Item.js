@@ -42,9 +42,14 @@ export const Item = ({ product, quantityAdded }) => {
         <hr className="mb-2" />
         <div className="flex justify-between items-center">
           <span className="font-bold">${product.price}</span>
-          <span className="text-xs">
-            {quantityAdded ? "Agregados" : "En Stock"}:{" "}
-            {quantityAdded || product.stock}
+          <span
+            className={product.stock === 0 ? "text-xs text-red-500" : "text-xs"}
+          >
+            {product.stock === 0
+              ? "Sin Stock"
+              : quantityAdded
+              ? `Agregados: ${quantityAdded}`
+              : `En Stock: ${product.stock}`}
           </span>
         </div>
       </div>

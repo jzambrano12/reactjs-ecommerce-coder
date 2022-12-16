@@ -34,7 +34,6 @@ export const useGetItem = () => {
     if (id) {
       getDoc(ref)
         .then((item) => {
-          console.log({ item });
           if (item.exists()) {
             setData({ id: item.id, ...item.data() });
           }
@@ -50,8 +49,6 @@ export const useGetItem = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log({ data });
 
   return data;
 };
