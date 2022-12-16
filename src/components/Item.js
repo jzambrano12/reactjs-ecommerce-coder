@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { useGetItemImg } from "../hooks/useGetItemImg";
+import { Loading } from "./Loading";
 
 export const Item = ({ product, quantityAdded }) => {
   const navigate = useNavigate();
+  const img = useGetItemImg(product.img);
 
   const description = product.description.slice(0, 30);
   const title = product.name.slice(0, 20);
 
   function handleNavigate() {
     navigate(`/item/${product.id}`);
+  }
+
+  if (!img) {
+    return <Loading />;
   }
 
   return (
@@ -17,7 +24,7 @@ export const Item = ({ product, quantityAdded }) => {
     >
       <div className="flex flex-col flex-1">
         <img
-          src={product.img}
+          src={img}
           className="w-full h-[100px] object-cover mb-2"
           alt="Product"
         />

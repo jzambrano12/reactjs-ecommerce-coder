@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
+import { useGetItemImg } from "../hooks/useGetItemImg";
 import { ItemCount } from "./ItemCount";
+import { Loading } from "./Loading";
 
 const ItemDetail = ({ item }) => {
   const { addItem, isInCart } = useContext(CartContext);
@@ -9,6 +11,7 @@ const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
   const [currentStock, setCurrentStock] = useState(item.stock);
   const maxQuantity = currentStock;
+  const img = useGetItemImg(item.img);
 
   function handleCount(type) {
     if (type === "plus" && count < maxQuantity) setCount(count + 1);
@@ -31,7 +34,11 @@ const ItemDetail = ({ item }) => {
     <div className="flex w-5/6 bg-white rounded p-10 transition-all shadow hover:shadow-lg">
       {/* Item image */}
       <div className="flex justify-center w-1/2">
-        <img className="max-h-[500px]" src={item.img} alt={item.name} />
+        {!img ? (
+          <Loading />
+        ) : (
+          <img className="max-h-[500px]" src={img} alt={item.name} />
+        )}
       </div>
 
       {/* Item description */}
