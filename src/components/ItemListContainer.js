@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Firebase
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { firebaseDb } from "../firebase";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 // Own components
 import { ItemList } from "./ItemList";
@@ -14,14 +19,21 @@ export const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    // Verify if we are searching by category
+    // else get all the items from Firestore
+
     if (!category) {
-      const itemsCollection = collection(firebaseDb(), "items");
+      const db = getFirestore();
+
+      const itemsCollection = collection(db, "items");
       getDocs(itemsCollection).then((result) =>
         setProducts(result.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
       );
     } else {
+      const db = getFirestore();
+
       const q = query(
-        collection(firebaseDb(), "items"),
+        collection(db, "items"),
         where("category", "==", category)
       );
       getDocs(q).then((result) =>
@@ -29,30 +41,6 @@ export const ItemListContainer = () => {
       );
     }
   }, [category]);
-
-  // useEffect(() => {
-  //   new Promise((resolve) => {
-  //     // Reset the state to show the loading spinner
-  //     setProducts([]);
-
-  //     // Simulation of a call to an api
-  //     return setTimeout(() => {
-  //       resolve(Items);
-  //     }, 3000);
-  //   }).then((data) => {
-  //     // Execute only in the categories views
-  //     if (category) {
-  //       const categories = data.filter(
-  //         (product) => product.category === category
-  //       );
-
-  //       // Execute only in the home
-  //       setProducts(categories);
-  //     } else {
-  //       setProducts(data);
-  //     }
-  //   });
-  // }, [category]);
 
   if (products.length === 0) {
     return <Loading />;

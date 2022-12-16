@@ -9,14 +9,15 @@ import reportWebVitals from "./reportWebVitals";
 import { router } from "./router";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCY_ahJeRRr-mWgeNckowIzcEi0MWYHNsM",
-  authDomain: "coder-ecommerce-ffb9c.firebaseapp.com",
-  projectId: "coder-ecommerce-ffb9c",
-  storageBucket: "coder-ecommerce-ffb9c.appspot.com",
-  messagingSenderId: "68787096671",
-  appId: "1:68787096671:web:ad75cf987100899febdfea",
+  apiKey: "AIzaSyDeHd_OgPMoqZB1J5bkrwW2hrf58bFoi9E",
+  authDomain: "ecommerce-para-coderhouse.firebaseapp.com",
+  projectId: "ecommerce-para-coderhouse",
+  storageBucket: "ecommerce-para-coderhouse.appspot.com",
+  messagingSenderId: "667297626621",
+  appId: "1:667297626621:web:2b1622c8702ba977ea0194",
 };
 
+// Initialize Firebase
 initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
